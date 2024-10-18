@@ -52,7 +52,7 @@ namespace HomeWork
             Console.WriteLine("Результат копирования: " + string.Join(", ", array2));
             
             // Задание 6 - Изменение размера массива
-            int newSize = 6;
+            int newSize = 6; // Решил сделать переменную для удобства.
 
             Array.Resize(ref array1, newSize);
             Console.WriteLine("Измененный размер массива("+newSize+"):" + string.Join(", ", array1));
