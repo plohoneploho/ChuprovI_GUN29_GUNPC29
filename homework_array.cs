@@ -50,10 +50,10 @@ namespace HomeWork
             int[] array2 = { 7, 8, 9, 10, 11, 12, 13 };
             Array.Copy(array1, 0, array2, 0, 3);
             Console.WriteLine("Результат копирования: " + string.Join(", ", array2));
-
+            
+            // Задание 6 - Изменение размера массива
             int newSize = 6;
 
-            // Задание 6 - Изменение размера массива
             Array.Resize(ref array1, newSize);
             Console.WriteLine("Измененный размер массива("+newSize+"):" + string.Join(", ", array1));
         }
