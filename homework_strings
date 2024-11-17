@@ -1,0 +1,77 @@
+using System.Text;
+
+namespace HomeWork_Strings
+{
+    internal class Program
+    {
+        // Задание 1
+        public static string ConcatenateStrings(string first, string second)
+        {
+            return first + second;
+        }
+
+        // Задание 2
+        public static string GreetUser(string name, int age)
+        {
+            return $"Привет, {name}!\nТебе {age} лет, ну ты и старый.";
+        }
+
+        // Задание 3
+        public static string GetStringInfo(string input)
+        {
+            return $"Количество символов: {input.Length}\n" +
+                   $"В верхнем регистре: {input.ToUpper()}\n" +
+                   $"В нижнем регистре: {input.ToLower()}";
+        }
+
+        // Задание 4
+        public static string GetFirstFiveCharacters(string input)
+        {
+            if (input.Length < 5)
+            {
+                return input;
+            }
+            return input.Substring(0, 5);
+        }
+
+        // Задание 5
+        public static StringBuilder JoinStringsWithSpaces(string[] strings)
+        {
+            var sb = new StringBuilder();
+            foreach (var str in strings)
+            {
+                sb.Append(str).Append(" ");
+            }
+            return sb;
+        }
+
+        // Задание 6
+        public static string ReplaceWords(string inputString, string wordToReplace, string replacementWord)
+        {
+            return inputString.Replace(wordToReplace, replacementWord);
+        }
+
+        // Проверка
+        static void Main(string[] args)
+        {
+            Console.WriteLine("=== Задание 1 ===");
+            string concatenated = ConcatenateStrings("Привет", " Мир!");
+            Console.WriteLine($"Результат: {concatenated}");
+            Console.WriteLine("=== Задание 2 ===");
+            string greeting = GreetUser("Илья", 30);
+            Console.WriteLine($"Приветствие:\n{greeting}");
+            Console.WriteLine("=== Задание 3 ===");
+            string info = GetStringInfo("Тест");
+            Console.WriteLine($"Тест:\n{info}");
+            Console.WriteLine("=== Задание 4 ===");
+            string firstFive = GetFirstFiveCharacters("абвгдеёжз");
+            Console.WriteLine($"Первые пять символов: {firstFive}");
+            Console.WriteLine("=== Задание 5 ===");
+            var sbResult = JoinStringsWithSpaces(new string[] { "Это", "вроде как", "проверка", "работы" });
+            Console.WriteLine($"Результат: {sbResult.ToString().Trim()}");
+            Console.WriteLine("=== Задание 6 ===");
+            string replaced = ReplaceWords("Привет мир", "мир", "всем!");
+            Console.WriteLine($"Результат: {replaced}");
+        }
+    }
+}
